@@ -1,3 +1,104 @@
+header {
+  padding: 16px 16px 0;
+  width: 100%;
+}
+
+.navbar {
+  margin: 0 auto;
+  max-width: 1440px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-list li {
+  margin-left: 24px;
+}
+
+.logo {
+  max-width: 96px;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 8px 16px;
+  color: #959698;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 200;
+  -webkit-transition: color 0.25s ease;
+  transition: color 0.25s ease;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  left: calc(50% - 1px);
+  top: -100%;
+  width: 2px;
+  height: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(233, 29, 34, 0)), to(#e91d22));
+  background: linear-gradient(180deg, rgba(233, 29, 34, 0) 0%, #e91d22 100%);
+  -webkit-transition: height 0.5s ease;
+  transition: height 0.5s ease;
+}
+
+.nav-link:hover {
+  color: #f4f7fb;
+}
+
+.nav-link:hover::before {
+  height: 100%;
+}
+
+.nav-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-social svg {
+  width: 24px;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.nav-social svg * {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.nav-social svg:hover * {
+  fill: #f02a2f;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
 *,
 *::before,
 *::after {
@@ -11,5 +112,38 @@ body {
   width: 100%;
   height: 100vh;
   background-color: #1a1a1a;
+}
+
+body,
+textarea,
+input,
+button {
+  font-family: "Mukta", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #edf1f7;
+}
+
+p {
+  font-size: 16px;
+  color: #959698;
+  letter-spacing: 1px;
+  line-height: 140%;
+}
+
+.debug-border {
+  border: solid 1px red;
 }
 /*# sourceMappingURL=style.css.map */

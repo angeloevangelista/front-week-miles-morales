@@ -1,3 +1,7 @@
+@import "partials/colors";
+@import "partials/layout";
+@import "partials/menu";
+
 *,
 *::before,
 *::after {
@@ -11,4 +15,37 @@ body {
   height: 100vh;
 
   background-color: #1a1a1a;
+}
+
+body,
+textarea,
+input,
+button {
+  font-family: "Mukta", sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+p {
+  font-size: 16px;
+  color: $gray-3;
+  letter-spacing: 1px;
+  line-height: 140%;
+}
+
+.debug-border {
+  border: solid 1px red;
 }
