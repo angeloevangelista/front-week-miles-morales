@@ -1,11 +1,116 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 36px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.container-item-1 {
+  max-width: 560px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.spiderman {
+  width: 120%;
+  -webkit-transform: translate3d(-150px, 0, 0);
+          transform: translate3d(-150px, 0, 0);
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  -webkit-transform: skewX(-10deg);
+          transform: skewX(-10deg);
+  background: linear-gradient(225deg, #ea1d22 0%, #b31317 100%);
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+  transition: transform 0.25s, -webkit-transform 0.25s;
+}
+
+.button::before, .button::after {
+  opacity: 0;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: -2px;
+  left: -2px;
+  width: 30%;
+  height: 70%;
+  border-radius: 4px;
+  border-top: solid 2px #fff;
+  border-left: solid 2px #fff;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -2px;
+  right: -2px;
+  width: 30%;
+  height: 70%;
+  border-radius: 4px;
+  border-bottom: solid 2px #fff;
+  border-right: solid 2px #fff;
+}
+
+.button:hover {
+  -webkit-transform: skewX(-10deg) scale(1.05);
+          transform: skewX(-10deg) scale(1.05);
+}
+
+.button:hover::before, .button:hover::after {
+  opacity: 1;
+}
+
+.button-secondary {
+  position: relative;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  -webkit-transform: skewX(-10deg);
+          transform: skewX(-10deg);
+  background: transparent;
+  border: 2px solid #ea1d22;
+}
+
 header {
-  padding: 16px 16px 0;
+  padding-top: 16px;
   width: 100%;
 }
 
 .navbar {
   margin: 0 auto;
   max-width: 1440px;
+  padding: 0 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
