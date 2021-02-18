@@ -102,4 +102,28 @@
   background: transparent;
 
   border: 2px solid $red;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+    width: 0;
+    height: 100%;
+
+    background: linear-gradient(225deg, #ea1d22 0%, #b31317 100%);
+
+    transition: width 0.25s;
+  }
+
+  &:hover {
+    color: $white;
+
+    &::before {
+      width: 100%;
+    }
+  }
 }
