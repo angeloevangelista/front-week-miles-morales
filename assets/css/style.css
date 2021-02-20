@@ -12,16 +12,21 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100vh;
 }
 
 @media screen and (max-width: 1096px) {
   .container {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    height: auto;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow-y: scroll;
   }
 }
 
@@ -40,14 +45,13 @@
 }
 
 .spiderman {
-  width: 120%;
-  -webkit-transform: translate3d(-150px, 0, 0);
-          transform: translate3d(-150px, 0, 0);
+  width: 90%;
+  -webkit-transform: translate3d(-100px, 0px, 0);
+          transform: translate3d(-100px, 0px, 0);
 }
 
 @media screen and (max-width: 1096px) {
   .spiderman {
-    width: 100%;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
   }
@@ -66,6 +70,12 @@
   transition: -webkit-transform 0.25s;
   transition: transform 0.25s;
   transition: transform 0.25s, -webkit-transform 0.25s;
+}
+
+@media screen and (max-width: 1096px) {
+  .button {
+    padding: 12px;
+  }
 }
 
 .button::before, .button::after {
@@ -149,7 +159,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -170,6 +180,26 @@
   left: 0;
   display: block;
   background: linear-gradient(101.47deg, #0a0c10 26.38%, rgba(10, 12, 16, 0.8) 50.07%, #0a0c10 73.17%);
+}
+
+.bg-loader {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(225deg, #ea1d22 0%, #b31317 100%);
 }
 
 header {
@@ -600,6 +630,62 @@ header {
   padding-bottom: 72px;
 }
 
+.bg-loader svg path {
+  fill: transparent;
+  -webkit-animation: logo-spiderman 10s ease infinite alternate;
+          animation: logo-spiderman 10s ease infinite alternate;
+}
+
+@-webkit-keyframes logo-spiderman {
+  0% {
+    stroke-width: 0;
+    stroke-dasharray: 1 100;
+    fill: transparent;
+  }
+  25% {
+    stroke-width: 1;
+    stroke-dasharray: 100 0;
+    fill: transparent;
+  }
+  60%,
+  100% {
+    stroke-width: 0.4;
+    fill: #e5e9ef;
+  }
+}
+
+@keyframes logo-spiderman {
+  0% {
+    stroke-width: 0;
+    stroke-dasharray: 1 100;
+    fill: transparent;
+  }
+  25% {
+    stroke-width: 1;
+    stroke-dasharray: 100 0;
+    fill: transparent;
+  }
+  60%,
+  100% {
+    stroke-width: 0.4;
+    fill: #e5e9ef;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0a0c10;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #272a31;
+}
+
 *,
 *::before,
 *::after {
@@ -612,6 +698,13 @@ header {
 body {
   width: 100%;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #0a0c10;
 }
 
@@ -658,6 +751,12 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.justify-content-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .border {

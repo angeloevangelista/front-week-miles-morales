@@ -15,6 +15,14 @@
     />
   </head>
   <body>
+    <section class="bg-loader">
+      <img
+        src="assets/images/svg/logo-spiderman.svg"
+        alt="Spider-man"
+        onload="SVGInject(this)"
+      />
+    </section>
+
     <header>
       <nav class="navbar">
         <div class="nav-menu">
@@ -87,7 +95,7 @@
           Marvel, Miles precisa reconhecer e assumir o título de Spider-Man.
         </p>
 
-        <div class="my-1">
+        <div class="my-1 flex justify-content-center">
           <a href="#" class="button">Pre-Order</a>
           <a href="#" class="ml-2 button-secondary">Watch the teaser</a>
         </div>
@@ -107,12 +115,26 @@
       </div>
 
       <div class="container-item-2">
-        <img
-          class="spiderman"
-          src="/assets/images/png/spiderman.png"
-          alt="Spider-man"
-        />
+        <div class="js-tilt">
+          <img
+            class="spiderman"
+            src="/assets/images/png/spiderman.png"
+            alt="Spider-man"
+          />
+        </div>
       </div>
     </main>
+
+    <script src="assets/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+    <script>
+      $(".js-tilt").tilt({
+        perspective: 2000,
+        scale: 1.05,
+      });
+    </script>
   </body>
 </html>
